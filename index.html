@@ -56,7 +56,7 @@
     document.getElementById("cpBtn").addEventListener("click", function() {
     const button = this;
     const originalText = button.textContent;
-    const domain = window.location.hostname; // atau teks yang ingin disalin
+    const domain = window.location.href; // atau teks yang ingin disalin
     
     navigator.clipboard.writeText(domain)
       .then(() => {
