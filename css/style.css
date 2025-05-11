@@ -74,7 +74,7 @@
 .container{
     background-image: url("../images/bgroundgojo1.jpg"); /*Mengambil path background*/
     background-size: cover; /* Memastikan gambar menutupi seluruh container */
-    background-position: center; /*posisi background*/
+    background-position: fixed; /*posisi background*/
     background-attachment: fixed;
     margin: 0 auto; 
     width: 100%;
