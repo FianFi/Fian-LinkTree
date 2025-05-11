@@ -14,9 +14,8 @@
         <nav>
             <div class="navcon">
                 <ul class="menu">
-                    <li><a onclick="copyDomain()" href="#">Copy Link Profile</a>
+                    <li><a onclick="copyDomain()" id="cpBtn" href="#">Copy Link Profile</a>
                         <input type="text" id="linkToCopy" value="https://contoh-link.com" readonly hidden >
-                        <span id="copyMessage" style="display: none;">Tersalin!</span>
                     </li>
                 </ul>
                 <div class="tombol">
@@ -31,7 +30,10 @@
         <div class="link">
             <ul>
                 <a href="https://Instagram.com/FianFi_">Instagram</a>
-                <a href="">Discord</a>
+                <a href="https://www.tiktok.com/@fianfi_?_t=ZS-8wGUf7ULzd9&_r=1">TikTok</a>
+                <a href="https://www.threads.net/@fianfi_">Theads</a>
+                <a href="http://teer.id/KiitoKun">Trakteer</a>
+                <a href="https://halu.app/star/fianfi_">HaluApp</a>
             </ul>
         </div>
         <!-- Footer -->
@@ -48,16 +50,28 @@
     tombol.addEventListener('click', () => {
       menu.classList.toggle('aktif'); // Tambah/hapus class "aktif"
     });
+
 </script>
 <script>
-    function copyDomain() {
-      // Ambil domain saat ini (tanpa path)
-      const domain = window.location.hostname;
-      
-      // Salin ke clipboard
-      navigator.clipboard.writeText(domain)
-        .then(() => alert(`Domain "${domain}" berhasil disalin!`))
-        .catch(err => alert("Gagal menyalin: " + err));
-    }
-    </script>
+    document.getElementById("cpBtn").addEventListener("click", function() {
+    const button = this;
+    const originalText = button.textContent;
+    const domain = window.location.hostname; // atau teks yang ingin disalin
+    
+    navigator.clipboard.writeText(domain)
+      .then(() => {
+        // Ganti teks tombol sementara
+        button.textContent = "✓ Tersalin!";
+        
+        // Kembalikan teks asli setelah 2 detik
+        setTimeout(() => {
+          button.textContent = originalText;
+        }, 2000);
+      })
+      .catch(err => {
+        button.textContent = "Gagal!";
+        setTimeout(() => button.textContent = originalText, 2000);
+      });
+  });
+</script>
 </html>
