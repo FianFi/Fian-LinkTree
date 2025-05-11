@@ -7,25 +7,23 @@
 </head>
 
 <body>
-    <!-- navbar -->
-    <div>
+    
+    <!-- Content -->
+    <div class="container">
+        <!-- navbar -->
         <nav>
             <div class="navcon">
                 <ul class="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Tentang</a></li>
-                    <li><a href="#">Produk</a></li>
-                    <li><a href="#">Layanan</a></li>
-                    <li><a href="#">Kontak Kami</a></li>
+                    <li><a onclick="copyDomain()" href="#">Copy Link Profile</a>
+                        <input type="text" id="linkToCopy" value="https://contoh-link.com" readonly hidden >
+                        <span id="copyMessage" style="display: none;">Tersalin!</span>
+                    </li>
                 </ul>
                 <div class="tombol">
                     &#9776;
                 </div>
             </div>
         </nav>
-    </div>
-    <!-- Content -->
-    <div class="container">
         <div class="profileP">
             <img src="images/PP luffy.jpg" alt="Error">
             <p>Admin Tamvan</p>
@@ -49,5 +47,17 @@
     
     tombol.addEventListener('click', () => {
       menu.classList.toggle('aktif'); // Tambah/hapus class "aktif"
-    });</script>
+    });
+</script>
+<script>
+    function copyDomain() {
+      // Ambil domain saat ini (tanpa path)
+      const domain = window.location.hostname;
+      
+      // Salin ke clipboard
+      navigator.clipboard.writeText(domain)
+        .then(() => alert(`Domain "${domain}" berhasil disalin!`))
+        .catch(err => alert("Gagal menyalin: " + err));
+    }
+    </script>
 </html>
