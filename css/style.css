@@ -51,10 +51,10 @@
         position: absolute;
         top: 50px;
         left: 0;
-        right: 50%;
+        right: auto;
         background: rgba(0, 0, 0, 0.162);
         padding: 5px;
-        text-align: center;
+        text-align: left;
       }
     
       .menu.aktif { /* Class tambahan untuk toggle JS */
