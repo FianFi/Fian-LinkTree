@@ -76,6 +76,7 @@
     background-size: cover; /* Memastikan gambar menutupi seluruh container */
     background-position: center; /*posisi background*/
     background-attachment: fixed;
+    background-repeat: no-repeat;
     margin: 0 auto; 
     width: 100%;
     height: 100vh; /* Ganti dengan viewport height atau ukuran pasti */
