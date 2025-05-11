@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FianFi_ LinkT</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <div>
+        <nav>
+            <div class="navcon">
+                <ul class="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Tentang</a></li>
+                    <li><a href="#">Produk</a></li>
+                    <li><a href="#">Layanan</a></li>
+                    <li><a href="#">Kontak Kami</a></li>
+                </ul>
+                <div class="tombol">
+                    &#9776;
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Content -->
+    <div class="container">
+        <div class="profileP">
+            <img src="images/PP luffy.jpg" alt="Error">
+            <p>Admin Tamvan</p>
+        </div>
+        <div class="link">
+            <ul>
+                <a href="https://Instagram.com/FianFi_">Instagram</a>
+                <a href="">Discord</a>
+            </ul>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <div class="fright">Version 1.0.0</div>
+            <div class="fleft">Made by <a href="https://Instagram.com/FianFi_">FianFi</a></a></div>
+        </div>
+    </div>
+</body>
+<script>
+    const tombol = document.querySelector('.tombol');
+    const menu = document.querySelector('.menu');
+    
+    tombol.addEventListener('click', () => {
+      menu.classList.toggle('aktif'); // Tambah/hapus class "aktif"
+    });</script>
+</html>
